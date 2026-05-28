@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PortfolioWork {
+  id          String   @id @default(uuid())
+  type        String   // 'image' | 'video'
+  url         String
+  thumb       String?
+  title       String
+  description String?
+  likes       Int      @default(0)
+  skillLane   String   // e.g. "3d-modeling"
+  createdAt   DateTime @default(now())
+}
+
+model Inquiry {
+  id        String   @id @default(uuid())
+  discord   String?
+  social    String?
+  createdAt DateTime @default(now())
+}
