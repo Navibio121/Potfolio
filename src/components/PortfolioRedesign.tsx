@@ -16,6 +16,10 @@ const SAMPLE_PROJECTS = [
     industry: 'Environments',
     description: 'It was great, the border is awesome, and it\'s going to help us a ton in our endeavors for the game!',
     image_url: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1600&auto=format&fit=crop',
+    angles: [
+      'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop'
+    ],
     isSample: true,
   },
   {
@@ -24,6 +28,10 @@ const SAMPLE_PROJECTS = [
     industry: 'Game Art',
     description: 'Yea he got the models done and they look super nice, I\'m definitely excited to see the rest of the map he\'s making!',
     image_url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop',
+    angles: [
+      'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop'
+    ],
     isSample: true,
   },
 ];

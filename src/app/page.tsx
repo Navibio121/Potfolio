@@ -44,9 +44,17 @@ export default function Home() {
       setProjects(formattedProjects);
     } else {
       setProjects([
-        { id: 'mock1', title: 'Trench Map (A Battlefield)', type: 'image', category: 'map', industry: 'Environment', url: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=2000&auto=format&fit=crop', description: 'The scene is set on World War 1 and I tried to use terrain and realistic textures...', angles: ['1', '2'] },
-        { id: 'mock2', title: 'Legoland Roblox', type: 'image', category: 'map', industry: 'Game Art', url: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=2000&auto=format&fit=crop', description: 'The project was to remake the Germany Legoland in Roblox to give a brand identity...', angles: ['1', '2', '3'] },
-        { id: 'mock3', title: 'Cloud 11 - A Futuristic City', type: 'image', category: 'model', industry: 'Architecture', url: 'https://images.unsplash.com/photo-1449156001437-3a16b1adca19?q=80&w=2000&auto=format&fit=crop', description: 'Custom models, lights and new texture techniques were adopted for this sci-fi project.', angles: ['1'] }
+        { id: 'mock1', title: 'Trench Map (A Battlefield)', type: 'image', category: 'map', industry: 'Environment', url: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=2000&auto=format&fit=crop', description: 'The scene is set on World War 1 and I tried to use terrain and realistic textures...', angles: [
+          'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop'
+        ] },
+        { id: 'mock2', title: 'Legoland Roblox', type: 'image', category: 'map', industry: 'Game Art', url: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?q=80&w=2000&auto=format&fit=crop', description: 'The project was to remake the Germany Legoland in Roblox to give a brand identity...', angles: [
+          'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop'
+        ] },
+        { id: 'mock3', title: 'Cloud 11 - A Futuristic City', type: 'image', category: 'model', industry: 'Architecture', url: 'https://images.unsplash.com/photo-1449156001437-3a16b1adca19?q=80&w=2000&auto=format&fit=crop', description: 'Custom models, lights and new texture techniques were adopted for this sci-fi project.', angles: [
+          'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop'
+        ] }
       ]);
     }
 
