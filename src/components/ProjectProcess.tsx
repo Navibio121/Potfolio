@@ -89,8 +89,8 @@ export default function ProjectProcess() {
     {
       id: '06',
       phase: 'Close',
-      title: 'Payment & close',
-      description: 'Final 50% - star rating - testimonial',
+      title: 'Rating & close',
+      description: 'star rating - testimonial',
       actor: 'DONE',
       icon: Award,
       color: '#81B29A'
@@ -382,8 +382,8 @@ export default function ProjectProcess() {
                     <Award size={20} />
                   </div>
                   <div>
-                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>06 — Payment & close</h3>
-                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>Final 50% - star rating - testimonial</p>
+                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>06 — Rating & close</h3>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>star rating - testimonial</p>
                   </div>
                 </div>
               </div>
