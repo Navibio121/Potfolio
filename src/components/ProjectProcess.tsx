@@ -3,103 +3,97 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
+  ArrowDown, 
+  HelpCircle, 
   FileText, 
-  Handshake, 
-  Cpu, 
+  CheckSquare, 
+  Play, 
   Layers, 
   Video, 
-  Sparkles, 
-  CreditCard, 
+  CheckCircle2, 
+  DollarSign, 
   Package, 
-  CheckCircle,
-  ArrowRight,
-  ArrowDown
+  Award,
+  ChevronRight
 } from 'lucide-react';
 
 export default function ProjectProcess() {
-  const phases = [
+  const steps = [
     {
       id: '01',
-      title: 'Submit Brief',
-      subtitle: 'Buyer Stage',
-      role: 'BUYER',
+      phase: 'Start',
+      title: 'Submit brief',
+      description: 'Game type - style refs - budget - deadline',
+      actor: 'BUYER',
       icon: FileText,
-      description: 'Game type · style references · budget boundary · deadline expectations.',
-      color: 'var(--accent)',
-      category: 'START',
+      color: '#E07A5F'
     },
     {
       id: '02',
-      title: 'Review & Agree',
-      subtitle: 'Developer Stage',
-      role: 'DEV',
-      icon: Handshake,
-      description: 'Detailed quotation · scope documentation · mutual agreement · 50% deposit.',
-      color: '#ADFF4F',
-      category: 'START',
+      phase: 'Start',
+      title: 'Review & agree',
+      description: 'Quote - scope doc - 50% deposit',
+      actor: 'DEV',
+      icon: CheckSquare,
+      color: '#F4F1DE'
     },
     {
       id: '03',
-      title: 'Work Begins',
-      subtitle: 'Active Development',
-      role: 'BUILD',
-      icon: Cpu,
-      description: 'Active development phase with progress tracked live via updates.',
-      color: '#ADFF4F',
-      category: 'BUILD',
-      updates: [
+      phase: 'Build',
+      title: 'Work begins',
+      description: 'Active dev - progress tracked live',
+      icon: Play,
+      color: '#81B29A',
+      branches: [
         {
-          id: 'u1',
-          tag: 'Updates 1–2',
-          title: 'Early Foundations',
-          description: 'Basic shape, blocking, structural screenshots, and notes.',
-          icon: Layers,
+          id: 'b1',
+          tag: 'Update 1-2',
+          title: 'Early foundations',
+          description: 'screenshots + notes',
+          icon: Layers
         },
         {
-          id: 'u2',
+          id: 'b2',
           tag: 'Update 3',
-          title: 'Mid-Build Review',
-          description: 'Mid-build cinematic video clip. Buyer can review & comment.',
-          icon: Video,
+          title: 'Mid-build review',
+          description: 'video clip - buyer can comment',
+          icon: Video
         },
         {
-          id: 'u3',
-          tag: 'Updates 4–5',
-          title: 'Near-Complete',
-          description: 'Polishing details and requesting near-complete build approval.',
-          icon: Sparkles,
+          id: 'b3',
+          tag: 'Update 4-5',
+          title: 'Near-complete build',
+          description: 'approval requested',
+          icon: CheckCircle2
         }
       ]
     },
     {
       id: '04',
-      title: 'Remaining 50%',
-      subtitle: 'Payment Phase',
-      role: 'PAYMENT',
-      icon: CreditCard,
-      description: 'Remaining 50% payment processed. Confirmed before final files release.',
-      color: '#ADFF4F',
-      category: 'SHIP',
+      phase: 'Ship',
+      title: 'Remaining 50% payment',
+      description: 'Buyer pays balance - confirmed before files',
+      actor: 'PAYMENT',
+      icon: DollarSign,
+      color: '#F2CC8F'
     },
     {
       id: '05',
-      title: 'Final Delivery',
-      subtitle: 'Asset Handover',
-      role: 'DELIVERY',
+      phase: 'Ship',
+      title: 'Final delivery',
+      description: 'Polished build - images - buyer approval',
+      sideBubble: 'Source files .rbxl - .spt etc. .ZIP',
       icon: Package,
-      description: 'Polished assets delivered (including .ZIP containing source files: .rbxl, .spt, etc.) for buyer approval.',
-      color: '#ADFF4F',
-      category: 'SHIP',
+      color: '#F2CC8F'
     },
     {
       id: '06',
-      title: 'Payment & Close',
-      subtitle: 'Project Finalized',
-      role: 'DONE',
-      icon: CheckCircle,
-      description: 'Project concluded. Final rating and testimonial submission.',
-      color: '#ADFF4F',
-      category: 'CLOSE',
+      phase: 'Close',
+      title: 'Payment & close',
+      description: 'Final 50% - star rating - testimonial',
+      actor: 'DONE',
+      icon: Award,
+      color: '#81B29A'
     }
   ];
 
@@ -108,62 +102,55 @@ export default function ProjectProcess() {
       id="process" 
       style={{ 
         position: 'relative', 
-        padding: '8rem 5% 9rem', 
-        background: '#070906', 
+        padding: '7rem 5% 8rem', 
+        background: '#080B07', 
         overflow: 'hidden',
         borderTop: '1px solid rgba(173, 255, 79, 0.08)'
       }}
     >
-      {/* ── Stunning & Amazing Background ── */}
+      {/* ── BREATHTAKING CARBON GRID TEXTURE & GLOW BACKGROUND ── */}
       <div 
         style={{
           position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          background: 'radial-gradient(circle at 50% 20%, rgba(173, 255, 79, 0.06) 0%, transparent 60%), radial-gradient(circle at 10% 80%, rgba(173, 255, 79, 0.03) 0%, transparent 50%)',
-          zIndex: 1,
-          pointerEvents: 'none'
-        }}
-      />
-      
-      {/* Animated glowing mesh line */}
-      <div 
-        style={{
-          position: 'absolute',
-          top: '30%',
-          left: '10%',
-          right: '10%',
-          height: '2px',
-          background: 'linear-gradient(90deg, transparent, rgba(173, 255, 79, 0.25), rgba(173, 255, 79, 0.05), transparent)',
-          filter: 'blur(4px)',
-          zIndex: 1,
-          pointerEvents: 'none'
-        }}
-      />
-      
-      <div 
-        style={{
-          position: 'absolute',
-          bottom: '20%',
-          right: '5%',
-          width: '350px',
-          height: '350px',
-          borderRadius: '50%',
-          background: 'rgba(173, 255, 79, 0.025)',
-          filter: 'blur(120px)',
+          inset: 0,
+          backgroundImage: `
+            radial-gradient(circle at 50% 25%, rgba(173, 255, 79, 0.05) 0%, transparent 60%),
+            radial-gradient(circle at 15% 75%, rgba(173, 255, 79, 0.03) 0%, transparent 50%),
+            linear-gradient(rgba(173, 255, 79, 0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(173, 255, 79, 0.015) 1px, transparent 1px)
+          `,
+          backgroundSize: '100% 100%, 100% 100%, 20px 20px, 20px 20px',
           zIndex: 1,
           pointerEvents: 'none'
         }}
       />
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
+      {/* Decorative vertical connection line behind all elements */}
+      <div 
+        className="hidden-mobile"
+        style={{
+          position: 'absolute',
+          top: '200px',
+          bottom: '150px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '2px',
+          background: 'dashed rgba(173, 255, 79, 0.12)',
+          borderLeft: '2px dashed rgba(173, 255, 79, 0.15)',
+          zIndex: 2,
+          pointerEvents: 'none'
+        }}
+      />
+
+      <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 3 }}>
         
-        {/* ── Section Header ── */}
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+        {/* ── Header ── */}
+        <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
           <div className="sec-label" style={{ justifyContent: 'center' }}>
             Workflow & Roadmap
           </div>
           <h2 className="font-syne" style={{
-            fontSize: 'clamp(2rem, 4vw, 3rem)',
+            fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
             fontWeight: 800,
             lineHeight: 1.1,
             color: 'var(--fg)',
@@ -174,306 +161,272 @@ export default function ProjectProcess() {
           </h2>
           <p style={{
             color: 'var(--muted)',
-            fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
-            maxWidth: '620px',
+            fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)',
+            maxWidth: '650px',
             margin: '0 auto',
             lineHeight: 1.6
           }}>
-            A highly structured, transparent pipeline engineered to deliver precision results from initial brief to final deployment.
+            The exact vertical flowchart and roadmap illustrating our collaborative pipeline from brief to final delivery.
           </p>
         </div>
 
-        {/* ── Desktop & Mobile Responsive Grid Layout ── */}
-        <div className="process-flow-container" style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+        {/* ── FLOWCHART GRID WRAPPER (Responsive Column Layout) ── */}
+        <div className="flowchart-container" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', position: 'relative' }}>
           
-          {/* PHASE 1: START */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderBottom: '1px solid rgba(173, 255, 79, 0.1)', paddingBottom: '0.75rem' }}>
-              <span className="font-syncopate" style={{ fontSize: '0.8rem', fontWeight: 900, color: 'var(--accent)', letterSpacing: '0.2em' }}>PHASE 01 // START</span>
+          {/* STEP 01 */}
+          <div className="flow-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr 200px', gap: '2rem', alignItems: 'center' }}>
+            {/* Left Phase Label */}
+            <div className="flow-left" style={{ textTransform: 'uppercase', fontFamily: 'var(--font-syncopate)', fontSize: '0.75rem', fontWeight: 900, color: 'var(--accent)', opacity: 0.6 }}>
+              Start
             </div>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.5rem',
-            }}>
-              {phases.filter(p => p.category === 'START').map((step) => (
-                <motion.div
-                  key={step.id}
-                  whileHover={{ y: -5, borderColor: 'rgba(173, 255, 79, 0.35)' }}
-                  style={{
-                    background: 'rgba(20, 26, 18, 0.4)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(173, 255, 79, 0.08)',
-                    borderRadius: '16px',
-                    padding: '2rem',
-                    transition: 'all 0.3s ease',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}
-                >
-                  <div style={{
-                    position: 'absolute', top: 0, right: 0,
-                    padding: '6px 16px', borderBottomLeftRadius: '12px',
-                    background: 'rgba(173, 255, 79, 0.1)',
-                    fontSize: '0.68rem', fontWeight: 900, color: 'var(--accent)',
-                    letterSpacing: '0.1em'
-                  }}>
-                    {step.role}
-                  </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.5rem' }}>
-                    <div style={{
-                      width: '46px', height: '46px', borderRadius: '12px',
-                      background: 'rgba(173, 255, 79, 0.08)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--accent)', border: '1px solid rgba(173, 255, 79, 0.15)'
-                    }}>
-                      <step.icon size={22} />
-                    </div>
-                    <div>
-                      <div style={{ color: 'var(--accent)', fontSize: '0.75rem', fontWeight: 900, letterSpacing: '0.15em' }}>STEP {step.id}</div>
-                      <h3 className="font-syne" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--fg)', marginTop: '2px' }}>{step.title}</h3>
-                    </div>
-                  </div>
-                  <p style={{ color: 'var(--muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Connect line for desktop */}
-          <div style={{ display: 'flex', justifyContent: 'center', padding: '0.5rem 0' }}>
-            <ArrowDown style={{ color: 'var(--accent)', opacity: 0.3 }} size={28} />
-          </div>
-
-          {/* PHASE 2: BUILD */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderBottom: '1px solid rgba(173, 255, 79, 0.1)', paddingBottom: '0.75rem' }}>
-              <span className="font-syncopate" style={{ fontSize: '0.8rem', fontWeight: 900, color: 'var(--accent)', letterSpacing: '0.2em' }}>PHASE 02 // ACTIVE BUILD</span>
-            </div>
-            
-            {phases.filter(p => p.category === 'BUILD').map((step) => (
-              <div key={step.id} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                <motion.div
-                  whileHover={{ borderColor: 'rgba(173, 255, 79, 0.35)' }}
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(20, 26, 18, 0.5), rgba(10, 13, 9, 0.3))',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(173, 255, 79, 0.15)',
-                    borderRadius: '20px',
-                    padding: '2.5rem',
-                    transition: 'all 0.3s ease',
-                    position: 'relative'
-                  }}
-                >
-                  <div style={{
-                    position: 'absolute', top: 0, right: 0,
-                    padding: '8px 20px', borderBottomLeftRadius: '16px',
-                    background: 'var(--accent)',
-                    fontSize: '0.72rem', fontWeight: 900, color: '#0A0D09',
-                    letterSpacing: '0.15em'
-                  }}>
-                    {step.role}
-                  </div>
-                  
-                  <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', marginBottom: '1.75rem' }}>
-                    <div style={{
-                      width: '54px', height: '54px', borderRadius: '14px',
-                      background: 'rgba(173, 255, 79, 0.1)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--accent)', border: '1px solid rgba(173, 255, 79, 0.25)',
-                      boxShadow: 'var(--glow-gold2)'
-                    }}>
-                      <step.icon size={26} />
-                    </div>
-                    <div>
-                      <div style={{ color: 'var(--accent)', fontSize: '0.75rem', fontWeight: 900, letterSpacing: '0.15em' }}>STEP {step.id}</div>
-                      <h3 className="font-syne" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--fg)', marginTop: '2px' }}>{step.title}</h3>
-                    </div>
-                  </div>
-                  <p style={{ color: 'var(--muted)', fontSize: '1rem', lineHeight: 1.6, maxWidth: '800px', marginBottom: '2rem' }}>
-                    {step.description}
-                  </p>
-
-                  {/* Micro updates timeline branches */}
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                    gap: '1.25rem',
-                    position: 'relative',
-                    zIndex: 2
-                  }}>
-                    {step.updates?.map((up) => (
-                      <div 
-                        key={up.id}
-                        style={{
-                          background: 'rgba(255, 255, 255, 0.02)',
-                          border: '1px solid rgba(255, 255, 255, 0.06)',
-                          borderRadius: '12px',
-                          padding: '1.5rem',
-                          transition: 'all 0.2s ease',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '0.75rem'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.borderColor = 'rgba(173, 255, 79, 0.2)';
-                          e.currentTarget.style.background = 'rgba(173, 255, 79, 0.02)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.06)';
-                          e.currentTarget.style.background = 'rgba(255, 255, 255, 0.02)';
-                        }}
-                      >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <span style={{
-                            fontSize: '0.7rem',
-                            fontWeight: 900,
-                            letterSpacing: '0.08em',
-                            padding: '3px 10px',
-                            borderRadius: '20px',
-                            background: 'rgba(173, 255, 79, 0.08)',
-                            color: 'var(--accent)',
-                            border: '1px solid rgba(173, 255, 79, 0.12)'
-                          }}>
-                            {up.tag}
-                          </span>
-                          <up.icon size={16} style={{ color: 'var(--accent)', opacity: 0.6 }} />
-                        </div>
-                        <h4 className="font-syne" style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--fg)' }}>{up.title}</h4>
-                        <p style={{ color: 'var(--muted)', fontSize: '0.82rem', lineHeight: 1.5, margin: 0 }}>
-                          {up.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            ))}
-          </div>
-
-          {/* Connect line for desktop */}
-          <div style={{ display: 'flex', justifyContent: 'center', padding: '0.5rem 0' }}>
-            <ArrowDown style={{ color: 'var(--accent)', opacity: 0.3 }} size={28} />
-          </div>
-
-          {/* PHASE 3: SHIP */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderBottom: '1px solid rgba(173, 255, 79, 0.1)', paddingBottom: '0.75rem' }}>
-              <span className="font-syncopate" style={{ fontSize: '0.8rem', fontWeight: 900, color: 'var(--accent)', letterSpacing: '0.2em' }}>PHASE 03 // SHIP & DELIVERY</span>
-            </div>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.5rem',
-            }}>
-              {phases.filter(p => p.category === 'SHIP').map((step) => (
-                <motion.div
-                  key={step.id}
-                  whileHover={{ y: -5, borderColor: 'rgba(173, 255, 79, 0.35)' }}
-                  style={{
-                    background: 'rgba(20, 26, 18, 0.4)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(173, 255, 79, 0.08)',
-                    borderRadius: '16px',
-                    padding: '2rem',
-                    transition: 'all 0.3s ease',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}
-                >
-                  <div style={{
-                    position: 'absolute', top: 0, right: 0,
-                    padding: '6px 16px', borderBottomLeftRadius: '12px',
-                    background: 'rgba(173, 255, 79, 0.1)',
-                    fontSize: '0.68rem', fontWeight: 900, color: 'var(--accent)',
-                    letterSpacing: '0.1em'
-                  }}>
-                    {step.role}
-                  </div>
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.5rem' }}>
-                    <div style={{
-                      width: '46px', height: '46px', borderRadius: '12px',
-                      background: 'rgba(173, 255, 79, 0.08)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--accent)', border: '1px solid rgba(173, 255, 79, 0.15)'
-                    }}>
-                      <step.icon size={22} />
-                    </div>
-                    <div>
-                      <div style={{ color: 'var(--accent)', fontSize: '0.75rem', fontWeight: 900, letterSpacing: '0.15em' }}>STEP {step.id}</div>
-                      <h3 className="font-syne" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--fg)', marginTop: '2px' }}>{step.title}</h3>
-                    </div>
-                  </div>
-                  <p style={{ color: 'var(--muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Connect line for desktop */}
-          <div style={{ display: 'flex', justifyContent: 'center', padding: '0.5rem 0' }}>
-            <ArrowDown style={{ color: 'var(--accent)', opacity: 0.3 }} size={28} />
-          </div>
-
-          {/* PHASE 4: CLOSE */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderBottom: '1px solid rgba(173, 255, 79, 0.1)', paddingBottom: '0.75rem' }}>
-              <span className="font-syncopate" style={{ fontSize: '0.8rem', fontWeight: 900, color: 'var(--accent)', letterSpacing: '0.2em' }}>PHASE 04 // FINALIZATION</span>
-            </div>
-            
-            {phases.filter(p => p.category === 'CLOSE').map((step) => (
-              <motion.div
-                key={step.id}
-                whileHover={{ borderColor: 'var(--accent)' }}
-                style={{
-                  background: 'linear-gradient(135deg, rgba(20, 26, 18, 0.6), rgba(173, 255, 79, 0.03))',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(173, 255, 79, 0.2)',
-                  borderRadius: '20px',
-                  padding: '2.5rem',
-                  transition: 'all 0.3s ease',
-                  position: 'relative'
-                }}
-              >
-                <div style={{
-                  position: 'absolute', top: 0, right: 0,
-                  padding: '8px 24px', borderBottomLeftRadius: '16px',
-                  background: 'var(--accent)',
-                  fontSize: '0.72rem', fontWeight: 900, color: '#0A0D09',
-                  letterSpacing: '0.15em'
-                }}>
-                  {step.role}
-                </div>
-                
-                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', marginBottom: '1.5rem' }}>
-                  <div style={{
-                    width: '54px', height: '54px', borderRadius: '14px',
-                    background: 'rgba(173, 255, 79, 0.15)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: 'var(--accent)', border: '1px solid var(--accent)',
-                    boxShadow: 'var(--glow-gold)'
-                  }}>
-                    <step.icon size={26} />
+            {/* Center Card */}
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+              <div className="flow-card" style={{ width: '100%', maxWidth: '520px', background: 'rgba(20, 26, 18, 0.45)', backdropFilter: 'blur(16px)', border: '1px solid rgba(173, 255, 79, 0.12)', borderRadius: '16px', padding: '1.5rem 2rem', position: 'relative', boxShadow: '0 4px 30px rgba(0,0,0,0.2)' }}>
+                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(224, 122, 95, 0.15)', border: '1px solid rgba(224, 122, 95, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E07A5F' }}>
+                    <FileText size={20} />
                   </div>
                   <div>
-                    <div style={{ color: 'var(--accent)', fontSize: '0.75rem', fontWeight: 900, letterSpacing: '0.15em' }}>STEP {step.id}</div>
-                    <h3 className="font-syne" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--fg)', marginTop: '2px' }}>{step.title}</h3>
+                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>01 — Submit brief</h3>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>Game type - style refs - budget - deadline</p>
                   </div>
                 </div>
-                <p style={{ color: 'var(--muted)', fontSize: '1rem', lineHeight: 1.6, maxWidth: '800px', margin: 0 }}>
-                  {step.description}
-                </p>
-              </motion.div>
-            ))}
+              </div>
+            </div>
+            {/* Right Actor Bubble */}
+            <div className="flow-right" style={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <div style={{ background: 'rgba(224, 122, 95, 0.12)', border: '1px solid rgba(224, 122, 95, 0.25)', color: '#E07A5F', padding: '6px 16px', borderRadius: '30px', fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.1em' }}>
+                BUYER
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flow-arrow-row" style={{ display: 'flex', justifyContent: 'center', margin: '-0.5rem 0' }}>
+            <ArrowDown style={{ color: 'rgba(224, 122, 95, 0.4)' }} size={24} />
+          </div>
+
+          {/* STEP 02 */}
+          <div className="flow-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr 200px', gap: '2rem', alignItems: 'center' }}>
+            <div className="flow-left" style={{ textTransform: 'uppercase', fontFamily: 'var(--font-syncopate)', fontSize: '0.75rem', fontWeight: 900, color: 'var(--accent)', opacity: 0.6 }}>
+              {/* Aligned with start */}
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+              <div className="flow-card" style={{ width: '100%', maxWidth: '520px', background: 'rgba(20, 26, 18, 0.45)', backdropFilter: 'blur(16px)', border: '1px solid rgba(173, 255, 79, 0.12)', borderRadius: '16px', padding: '1.5rem 2rem', position: 'relative' }}>
+                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                    <CheckSquare size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>02 — Review & agree</h3>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>Quote - scope doc - 50% deposit</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flow-right" style={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#fff', padding: '6px 16px', borderRadius: '30px', fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.1em' }}>
+                DEV
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flow-arrow-row" style={{ display: 'flex', justifyContent: 'center', margin: '-0.5rem 0' }}>
+            <ArrowDown style={{ color: 'rgba(255, 255, 255, 0.3)' }} size={24} />
+          </div>
+
+          {/* STEP 03: Work Begins (Centered) */}
+          <div className="flow-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr 200px', gap: '2rem', alignItems: 'center' }}>
+            <div className="flow-left" style={{ textTransform: 'uppercase', fontFamily: 'var(--font-syncopate)', fontSize: '0.75rem', fontWeight: 900, color: 'var(--accent)', opacity: 0.6 }}>
+              Build
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+              <div className="flow-card" style={{ width: '100%', maxWidth: '520px', background: 'linear-gradient(135deg, rgba(129, 178, 154, 0.15), rgba(20, 26, 18, 0.4))', backdropFilter: 'blur(16px)', border: '1px solid rgba(129, 178, 154, 0.3)', borderRadius: '16px', padding: '1.5rem 2rem', position: 'relative', boxShadow: '0 4px 30px rgba(129,178,154,0.1)' }}>
+                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(129, 178, 154, 0.2)', border: '1px solid rgba(129, 178, 154, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#81B29A' }}>
+                    <Play size={20} style={{ transform: 'translateX(1px)' }} />
+                  </div>
+                  <div>
+                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>03 — Work begins</h3>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>Active dev - progress tracked live</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flow-right">
+              {/* Optional actor alignment or spacer */}
+            </div>
+          </div>
+
+          {/* Dynamic Nested 3-Branch Updates (PC and Mobile Responsive Grid) */}
+          <div className="flow-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr 200px', gap: '2rem', alignItems: 'center' }}>
+            <div className="flow-left"></div>
+            <div className="branch-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.25rem', width: '100%', maxWidth: '850px', margin: '0 auto' }}>
+              
+              {/* Branch 1 */}
+              <div className="branch-card" style={{ background: 'rgba(20, 26, 18, 0.3)', border: '1px solid rgba(173, 255, 79, 0.08)', borderRadius: '12px', padding: '1.25rem', position: 'relative' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <span style={{ fontSize: '0.68rem', fontWeight: 900, background: 'rgba(173, 255, 79, 0.08)', color: 'var(--accent)', border: '1px solid rgba(173, 255, 79, 0.12)', padding: '2px 8px', borderRadius: '20px' }}>
+                    Update 1-2
+                  </span>
+                  <Layers size={14} style={{ color: 'var(--accent)', opacity: 0.6 }} />
+                </div>
+                <h4 className="font-syne" style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff', margin: '0 0 4px' }}>Early foundations</h4>
+                <p style={{ color: 'var(--muted)', fontSize: '0.78rem', lineHeight: 1.4, margin: 0 }}>screenshots + notes</p>
+              </div>
+
+              {/* Branch 2 */}
+              <div className="branch-card" style={{ background: 'rgba(20, 26, 18, 0.3)', border: '1px solid rgba(173, 255, 79, 0.08)', borderRadius: '12px', padding: '1.25rem', position: 'relative' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <span style={{ fontSize: '0.68rem', fontWeight: 900, background: 'rgba(173, 255, 79, 0.08)', color: 'var(--accent)', border: '1px solid rgba(173, 255, 79, 0.12)', padding: '2px 8px', borderRadius: '20px' }}>
+                    Update 3
+                  </span>
+                  <Video size={14} style={{ color: 'var(--accent)', opacity: 0.6 }} />
+                </div>
+                <h4 className="font-syne" style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff', margin: '0 0 4px' }}>Mid-build review</h4>
+                <p style={{ color: 'var(--muted)', fontSize: '0.78rem', lineHeight: 1.4, margin: 0 }}>video clip - buyer can comment</p>
+              </div>
+
+              {/* Branch 3 */}
+              <div className="branch-card" style={{ background: 'rgba(20, 26, 18, 0.3)', border: '1px solid rgba(173, 255, 79, 0.08)', borderRadius: '12px', padding: '1.25rem', position: 'relative' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <span style={{ fontSize: '0.68rem', fontWeight: 900, background: 'rgba(173, 255, 79, 0.08)', color: 'var(--accent)', border: '1px solid rgba(173, 255, 79, 0.12)', padding: '2px 8px', borderRadius: '20px' }}>
+                    Update 4-5
+                  </span>
+                  <CheckCircle2 size={14} style={{ color: 'var(--accent)', opacity: 0.6 }} />
+                </div>
+                <h4 className="font-syne" style={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff', margin: '0 0 4px' }}>Near-complete build</h4>
+                <p style={{ color: 'var(--muted)', fontSize: '0.78rem', lineHeight: 1.4, margin: 0 }}>approval requested</p>
+              </div>
+
+            </div>
+            <div className="flow-right"></div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flow-arrow-row" style={{ display: 'flex', justifyContent: 'center', margin: '-0.5rem 0' }}>
+            <ArrowDown style={{ color: 'rgba(242, 204, 143, 0.4)' }} size={24} />
+          </div>
+
+          {/* STEP 04 */}
+          <div className="flow-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr 200px', gap: '2rem', alignItems: 'center' }}>
+            <div className="flow-left" style={{ textTransform: 'uppercase', fontFamily: 'var(--font-syncopate)', fontSize: '0.75rem', fontWeight: 900, color: 'var(--accent)', opacity: 0.6 }}>
+              Ship
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+              <div className="flow-card" style={{ width: '100%', maxWidth: '520px', background: 'rgba(20, 26, 18, 0.45)', backdropFilter: 'blur(16px)', border: '1px solid rgba(173, 255, 79, 0.12)', borderRadius: '16px', padding: '1.5rem 2rem', position: 'relative' }}>
+                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(242, 204, 143, 0.15)', border: '1px solid rgba(242, 204, 143, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F2CC8F' }}>
+                    <DollarSign size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>04 — Remaining 50% payment</h3>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>Buyer pays balance - confirmed before files</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flow-right" style={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <div style={{ background: 'rgba(242, 204, 143, 0.12)', border: '1px solid rgba(242, 204, 143, 0.25)', color: '#F2CC8F', padding: '6px 16px', borderRadius: '30px', fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.1em' }}>
+                PAYMENT
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flow-arrow-row" style={{ display: 'flex', justifyContent: 'center', margin: '-0.5rem 0' }}>
+            <ArrowDown style={{ color: 'rgba(242, 204, 143, 0.4)' }} size={24} />
+          </div>
+
+          {/* STEP 05 */}
+          <div className="flow-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr 200px', gap: '2rem', alignItems: 'center' }}>
+            <div className="flow-left" style={{ textTransform: 'uppercase', fontFamily: 'var(--font-syncopate)', fontSize: '0.75rem', fontWeight: 900, color: 'var(--accent)', opacity: 0.6 }}>
+              {/* Aligned with ship */}
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+              <div className="flow-card" style={{ width: '100%', maxWidth: '520px', background: 'rgba(20, 26, 18, 0.45)', backdropFilter: 'blur(16px)', border: '1px solid rgba(173, 255, 79, 0.12)', borderRadius: '16px', padding: '1.5rem 2rem', position: 'relative' }}>
+                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(242, 204, 143, 0.15)', border: '1px solid rgba(242, 204, 143, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F2CC8F' }}>
+                    <Package size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>05 — Final delivery</h3>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>Polished build - images - buyer approval</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flow-right" style={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <div style={{ background: 'rgba(173, 255, 79, 0.08)', border: '1px solid rgba(173, 255, 79, 0.25)', color: 'var(--accent)', padding: '6px 16px', borderRadius: '12px', fontSize: '0.72rem', fontWeight: 800, lineHeight: 1.3, maxWidth: '160px', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <ChevronRight size={14} style={{ flexShrink: 0 }} />
+                <span>Source files .rbxl - .spt etc. .ZIP</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flow-arrow-row" style={{ display: 'flex', justifyContent: 'center', margin: '-0.5rem 0' }}>
+            <ArrowDown style={{ color: 'rgba(129, 178, 154, 0.4)' }} size={24} />
+          </div>
+
+          {/* STEP 06 */}
+          <div className="flow-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr 200px', gap: '2rem', alignItems: 'center' }}>
+            <div className="flow-left" style={{ textTransform: 'uppercase', fontFamily: 'var(--font-syncopate)', fontSize: '0.75rem', fontWeight: 900, color: 'var(--accent)', opacity: 0.6 }}>
+              Close
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+              <div className="flow-card" style={{ width: '100%', maxWidth: '520px', background: 'linear-gradient(135deg, rgba(129, 178, 154, 0.2), rgba(20, 26, 18, 0.45))', backdropFilter: 'blur(16px)', border: '1px solid rgba(129, 178, 154, 0.35)', borderRadius: '16px', padding: '1.5rem 2rem', position: 'relative', boxShadow: 'var(--glow-gold2)' }}>
+                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(129, 178, 154, 0.25)', border: '1px solid rgba(129, 178, 154, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#81B29A' }}>
+                    <Award size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-syne" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#fff', margin: 0 }}>06 — Payment & close</h3>
+                    <p style={{ color: 'var(--muted)', fontSize: '0.85rem', margin: '4px 0 0', lineHeight: 1.4 }}>Final 50% - star rating - testimonial</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flow-right" style={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <div style={{ background: 'rgba(129, 178, 154, 0.15)', border: '1px solid rgba(129, 178, 154, 0.3)', color: '#81B29A', padding: '6px 16px', borderRadius: '30px', fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.1em' }}>
+                DONE
+              </div>
+            </div>
           </div>
 
         </div>
 
       </div>
+
+      {/* ── RESPONSIVE MOBILE FLOW STYLING ── */}
+      <style jsx global>{`
+        @media (max-width: 900px) {
+          .flow-row {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+            padding: 0 1rem;
+          }
+          .flow-left {
+            display: inline-block !important;
+            margin-bottom: 0.25rem !important;
+            font-size: 0.7rem !important;
+          }
+          .flow-right {
+            justify-content: flex-start !important;
+            margin-top: 0.5rem !important;
+            padding-left: 0.5rem !important;
+          }
+          .branch-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+            padding: 0 1rem !important;
+          }
+          .hidden-mobile {
+            display: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
