@@ -328,7 +328,7 @@ export default function HeroSlideshow({
               <span className="dot-circle" />
             </a>
             <a href="#contact" onClick={e => { e.preventDefault(); scrollTo('#contact'); }} className="btn-outline">
-              HIRE ME
+              Open for Commission 24/7
             </a>
           </div>
         </div>
