@@ -36,7 +36,7 @@ export default function ProjectCard({
 
   // Auto-slide effect
   React.useEffect(() => {
-    if (!lightbox || images.length <= 1) return;
+    if (images.length <= 1) return;
 
     const interval = setInterval(() => {
       setActiveImage((current: string) => {
@@ -47,7 +47,7 @@ export default function ProjectCard({
     }, 4000); // 4 seconds per slide
 
     return () => clearInterval(interval);
-  }, [lightbox, images]);
+  }, [images]);
 
   const handleDelete = async (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -103,14 +103,22 @@ export default function ProjectCard({
         {/* ── Thumbnail ── */}
         {!editing && (
           <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', background: '#111' }}>
-            <img
-              src={activeImage} alt={project.title}
-              style={{
-                width: '100%', height: '100%', objectFit: 'cover',
-                transform: hovered ? 'scale(1.05)' : 'scale(1)',
-                transition: 'transform 0.4s ease',
-              }}
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={activeImage}
+                src={activeImage} alt={project.title}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  width: '100%', height: '100%', objectFit: 'cover',
+                  transform: hovered ? 'scale(1.05)' : 'scale(1)',
+                  filter: 'brightness(1.2)',
+                  transition: 'transform 0.4s ease',
+                }}
+              />
+            </AnimatePresence>
 
             {/* Gallery Overlay Count */}
             {images.length > 1 && (

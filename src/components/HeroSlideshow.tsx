@@ -75,7 +75,7 @@ export default function HeroSlideshow({
             <motion.div
               key={currentSlide}
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 0.4, scale: 1 }}
+              animate={{ opacity: 1.0, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 2, ease: 'easeOut' }}
               style={{
@@ -88,7 +88,7 @@ export default function HeroSlideshow({
           )}
         </AnimatePresence>
         {/* Dark overlay for readability */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(7,7,15,0.7) 0%, #07070f 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(7,7,15,0.1) 0%, #07070f 100%)' }} />
       </div>
 
       {/* ── Ambient Orbs ── */}
