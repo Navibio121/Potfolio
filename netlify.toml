@@ -1,3 +1,18 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
+
+[[redirects]]
+  from = "/admin-gateway"
+  to = "/admin-gateway.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/auth/callback"
+  to = "/auth/callback.html"
+  status = 200
