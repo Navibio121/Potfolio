@@ -6,6 +6,7 @@ import HeroSlideshow from '@/components/HeroSlideshow';
 import ArtistProfile from '@/components/ArtistProfile';
 import TechStackGrid from '@/components/TechStackGrid';
 import PortfolioRedesign from '@/components/PortfolioRedesign';
+import ProjectProcess from '@/components/ProjectProcess';
 import { supabase } from '@/lib/supabase';
 import Testimonials from '@/components/Testimonials';
 import SocialLinksSection from '@/components/SocialLinksSection';
@@ -153,6 +154,9 @@ export default function Home() {
 
       {/* 3 ── Portfolio Grid (Fiverr Style) */}
       <PortfolioRedesign initialProjects={projects} isAdmin={isAdmin} onRefresh={loadData} />
+
+      {/* 3.5 ── Project Process (Visual Timeline Roadmap) */}
+      <ProjectProcess />
 
       {/* 4 ── Tech Stack Grid */}
       <TechStackGrid isAdmin={isAdmin} />
